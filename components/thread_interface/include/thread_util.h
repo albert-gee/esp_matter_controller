@@ -11,12 +11,11 @@ extern "C" {
     /**
      * @brief Initializes a new OpenThread dataset.
      *
-     * This function initializes a new OpenThread dataset with the configuration
-     * provided in the Kconfig settings.
+     * This function initializes a new OpenThread dataset and returns the dataset in hex string format.
      *
-     * @return ESP_OK on success, ESP_FAIL on failure.
+     * @return A pointer to the hex string representation of the dataset.
      */
-    esp_err_t thread_dataset_init_new(void);
+    const char *thread_dataset_init_new(void);
 
     /**
      * @brief Enables the OpenThread IPv6 interface.

@@ -6,16 +6,26 @@
 #include <platform/ESP32/OpenthreadLauncher.h>
 #endif // CONFIG_OPENTHREAD_BORDER_ROUTER
 
+#include <cstring>
 #include <matter_interface.h>
 #include <wi_fi_sta_interface.h>
 
 #include <thread_util.h>
+
+#include <matter_pairing.h>
 
 #define MATTER_CONTROLLER_NODE_ID 1234
 #define MATTER_CONTROLLER_FABRIC_ID 1
 #define MATTER_CONTROLLER_LISTEN_PORT 5580
 
 static const char *TAG = "app_main";
+
+void hex_string_to_bytes(const char *hex_string, uint8_t *byte_array, size_t byte_array_len) {
+    size_t hex_len = strlen(hex_string);
+    for (size_t i = 0; i < hex_len / 2 && i < byte_array_len; i++) {
+        sscanf(&hex_string[i * 2], "%2hhx", &byte_array[i]);
+    }
+}
 
 extern "C" void app_main()
 {
@@ -58,7 +68,12 @@ extern "C" void app_main()
 
     // Initialize Thread network
     // vTaskDelay(pdMS_TO_TICKS(10000));
-    thread_dataset_init_new();
+    const char *dataset = thread_dataset_init_new();
+    if (dataset) {
+        printf("Generated Dataset TLVs: %s\n", dataset);
+    } else {
+        printf("Failed to generate dataset TLVs.\n");
+    }
     vTaskDelay(pdMS_TO_TICKS(3000));
 
     ifconfig_up();
@@ -67,7 +82,23 @@ extern "C" void app_main()
     thread_start();
     vTaskDelay(pdMS_TO_TICKS(3000));
 
-    // Commission Thread Border Router
+    // Commission Thread device
+    uint64_t relay_node_id = 0x1122;
+    uint32_t relay_pincode = 20202021;
+    uint16_t relay_disc = 3840;
+
+    // Convert dataset TLVs hex string to byte array
+    size_t dataset_len = strlen(dataset) / 2;
+    uint8_t dataset_tlvs[dataset_len];
+    hex_string_to_bytes(dataset, dataset_tlvs, dataset_len);
+
+    // Call the function
+    esp_err_t result = pair_ble_thread(relay_node_id, relay_pincode, relay_disc, dataset_tlvs, dataset_len);
+    if (result == ESP_OK) {
+        printf("Pairing successful\n");
+    } else {
+        printf("Pairing failed with error: %d\n", result);
+    }
 
     // Commission Thread devices through Thread Border Router
 

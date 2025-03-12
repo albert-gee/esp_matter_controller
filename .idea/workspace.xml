@@ -8,6 +8,7 @@
     <option name="/Default/Housekeeping/GlobalSettingsUpgraded/IsUpgraded/@EntryValue" value="true" type="bool" />
     <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
     <option name="/Default/Environment/Hierarchy/GeneratedFilesCacheKey/Timestamp/@EntryValue" value="3" type="long" />
+    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexRemoved" />
   </component>
   <component name="CMakePresetLoader">{
   &quot;useNewFormat&quot;: true
@@ -201,40 +202,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f11345f3-2df7-4071-b725-3d2efc09201a" name="Changes" comment="create wifi sta interface">
-      <change afterPath="$PROJECT_DIR$/.idea/esp_matter_controller.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/matter_interface/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/matter_interface/include/matter_interface.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/matter_interface/src/matter_interface.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/thread_interface/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/thread_interface/include/thread_events.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/thread_interface/include/thread_interface.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/thread_interface/include/thread_netif.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/thread_interface/include/thread_util.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/thread_interface/src/thread_events.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/thread_interface/src/thread_interface.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/thread_interface/src/thread_netif.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/thread_interface/src/thread_util.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/include/esp_ot_config_esp32c6.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/src/app_main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="f11345f3-2df7-4071-b725-3d2efc09201a" name="Changes" comment="create thread interface">
+      <change afterPath="$PROJECT_DIR$/components/matter_interface/include/matter_pairing.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/matter_interface/src/matter_pairing.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/wi_fi_sta_interface/include/wi_fi_sta_interface.h" beforeDir="false" afterPath="$PROJECT_DIR$/components/wi_fi_sta_interface/include/wi_fi_sta_interface.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/wi_fi_sta_interface/src/wi_fi_sta_interface.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/components/wi_fi_sta_interface/src/wi_fi_sta_interface.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependencies.lock" beforeDir="false" afterPath="$PROJECT_DIR$/dependencies.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/main/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/app_main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/esp_ot_config.h" beforeDir="false" afterPath="$PROJECT_DIR$/main/include/esp_ot_config.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/esp_ot_config_esp32c6.h" beforeDir="false" afterPath="$PROJECT_DIR$/components/thread_interface/include/config.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/matter_project_config.h" beforeDir="false" afterPath="$PROJECT_DIR$/components/matter_interface/include/matter_project_config.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdkconfig.defaults" beforeDir="false" afterPath="$PROJECT_DIR$/sdkconfig.defaults" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdkconfig.defaults.esp32c6" beforeDir="false" afterPath="$PROJECT_DIR$/sdkconfig.defaults.esp32c6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdkconfig.defaults.esp32s3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdkconfig.defaults.otbr" beforeDir="false" afterPath="$PROJECT_DIR$/sdkconfig.defaults.otbr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/thread_interface/include/thread_util.h" beforeDir="false" afterPath="$PROJECT_DIR$/components/thread_interface/include/thread_util.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/thread_interface/src/thread_util.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/components/thread_interface/src/thread_util.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/app_main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/app_main.cpp" afterDir="false" />
       <change beforePath="$USER_HOME$/esp/esp-matter-1.4/connectedhomeip/connectedhomeip" beforeDir="false" afterPath="$USER_HOME$/esp/esp-matter-1.4/connectedhomeip/connectedhomeip" afterDir="false" />
       <change beforePath="$USER_HOME$/esp/esp-matter-1.4/connectedhomeip/connectedhomeip/config/esp32/components/chip/CMakeLists.txt" beforeDir="false" afterPath="$USER_HOME$/esp/esp-matter-1.4/connectedhomeip/connectedhomeip/config/esp32/components/chip/CMakeLists.txt" afterDir="false" />
       <change beforePath="$USER_HOME$/esp/esp-matter-1.4/examples/controller/CMakeLists.txt" beforeDir="false" afterPath="$USER_HOME$/esp/esp-matter-1.4/examples/controller/CMakeLists.txt" afterDir="false" />
@@ -270,6 +244,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/components/matter_interface/include/matter_pairing.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/components/thread_interface/include/thread_util.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/components/thread_interface/src/thread_util.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/main/src/app_main.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -293,28 +268,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.RadMigrateCodeStyle&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.west.config.association.type.startup.service&quot;: &quot;true&quot;,
-    &quot;cf.advertisement.text.has.clang-format&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/albert/esp/esp-matter-1.4/examples/controller&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.github.copilot.settings.ApplicationConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.RadMigrateCodeStyle": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.west.config.association.type.startup.service": "true",
+    "cf.advertisement.text.has.clang-format": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/albert/esp/esp-matter-1.4/examples/controller",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.github.copilot.settings.ApplicationConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/components" />
@@ -1359,6 +1334,10 @@
       <workItem from="1741782599221" duration="121000" />
       <workItem from="1741794738147" duration="8528000" />
       <workItem from="1741808093938" duration="293000" />
+      <workItem from="1741808532551" duration="2608000" />
+      <workItem from="1741811867336" duration="1267000" />
+      <workItem from="1741813286329" duration="228000" />
+      <workItem from="1741813597811" duration="74000" />
     </task>
     <task id="LOCAL-00001" summary="create wifi sta interface">
       <option name="closed" value="true" />
@@ -1368,7 +1347,31 @@
       <option name="project" value="LOCAL" />
       <updated>1741795827155</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="refactor wifi sta interface">
+      <option name="closed" value="true" />
+      <created>1741810952303</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1741810952303</updated>
+    </task>
+    <task id="LOCAL-00003" summary="create matter interface">
+      <option name="closed" value="true" />
+      <created>1741810981607</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1741810981607</updated>
+    </task>
+    <task id="LOCAL-00004" summary="create thread interface">
+      <option name="closed" value="true" />
+      <created>1741811023912</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1741811023912</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1381,6 +1384,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="create wifi sta interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="create wifi sta interface" />
+    <MESSAGE value="refactor wifi sta interface" />
+    <MESSAGE value="create matter interface" />
+    <MESSAGE value="create thread interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="create thread interface" />
   </component>
 </project>

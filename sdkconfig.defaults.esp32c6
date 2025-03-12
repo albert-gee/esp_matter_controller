@@ -69,7 +69,7 @@ CONFIG_ENABLE_ROUTE_HOOK=n
 # CONFIG_ESP_CONSOLE_USB_SERIAL_JTAG=y
 
 # Enable project configurations
-CONFIG_CHIP_PROJECT_CONFIG="main/matter_project_config.h"
+CONFIG_CHIP_PROJECT_CONFIG="components/matter_interface/include/matter_project_config.h"
 
 # Enable ble controller
 CONFIG_ENABLE_ESP32_BLE_CONTROLLER=y

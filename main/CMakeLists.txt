@@ -1,5 +1,5 @@
-idf_component_register(SRC_DIRS          "."
-                       INCLUDE_DIRS      "."
+idf_component_register(SRC_DIRS          "src"
+                       INCLUDE_DIRS      "include"
                        PRIV_INCLUDE_DIRS  "." "${ESP_MATTER_PATH}/examples/common/utils")
 
 if(CONFIG_SPIFFS_ATTESTATION_TRUST_STORE)

@@ -82,6 +82,18 @@
         .storage_partition_name = "nvs", .netif_queue_size = 10, .task_queue_size = 10, \
     }
 
+// -----------------------------------------------------------------------------
+// OpenThread Default Configuration
+// -----------------------------------------------------------------------------
+#define ESP_OPENTHREAD_DEFAULT_CONFIG()    \
+{                                           \
+.radio_config = ESP_OPENTHREAD_DEFAULT_RADIO_CONFIG(),        \
+.host_config = ESP_OPENTHREAD_DEFAULT_HOST_CONFIG(),                 \
+.port_config = ESP_OPENTHREAD_DEFAULT_PORT_CONFIG()                  \
+}
+
+// -----------------------------------------------------------------------------
+
 #include <esp_rcp_update.h>
 
 #define ESP_OPENTHREAD_RCP_UPDATE_CONFIG()                                                                                         \

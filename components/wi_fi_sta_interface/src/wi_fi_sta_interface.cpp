@@ -1,11 +1,13 @@
 #include <cstring>
 #include <esp_event.h>
 #include <esp_log.h>
-#include <esp_netif.h>
+// #include <esp_netif.h>
 #include <esp_wifi.h>
 #include <esp_wifi_default.h>
 
 #include "wi_fi_sta_interface.h"
+
+#include <esp_check.h>
 
 static char* TAG = "WI_FI_STA_INTERFACE";
 
@@ -14,7 +16,7 @@ static EventGroupHandle_t s_wifi_event_group;
 // Number of retry attempts
 // static int s_retry_num = 0;
 // Network Interface for default STA
-static esp_netif_t *netif;
+// static esp_netif_t *netif;
 
 /**
  * @brief Wi-Fi event handler.
@@ -63,13 +65,13 @@ static void event_handler(void *arg, const esp_event_base_t event_base, const in
     }
 }
 
-void wifi_sta_init(const char *ssid, const char *password) {
-    ESP_ERROR_CHECK(esp_event_loop_create_default());
+esp_err_t wifi_sta_init(const char *ssid, const char *password) {
+    // ESP_ERROR_CHECK(esp_event_loop_create_default());
     s_wifi_event_group = xEventGroupCreate();
 
-    // Create network interface for Wi-Fi STA (esp_netif_new)
-    ESP_LOGI(TAG, "Create network interface for Wi-Fi STA...");
-    netif = esp_netif_create_default_wifi_sta();
+    // // Create network interface for Wi-Fi STA (esp_netif_new)
+    // ESP_LOGI(TAG, "Create network interface for Wi-Fi STA...");
+    // netif = esp_netif_create_default_wifi_sta();
 
     esp_event_handler_instance_t instance_any_id;
     esp_event_handler_instance_t instance_got_ip;
@@ -81,25 +83,27 @@ void wifi_sta_init(const char *ssid, const char *password) {
     // Initialize Wi-Fi
     ESP_LOGI(TAG, "Initializing Wi-Fi...");
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
-    ESP_ERROR_CHECK(esp_wifi_init(&cfg));
-
-    // Set Wi-Fi mode
-    ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
+    ESP_RETURN_ON_ERROR(esp_wifi_init(&cfg), TAG, "Failed to initialize WiFi");
+    ESP_RETURN_ON_ERROR(esp_wifi_stop(), TAG, "Failed to stop WiFi");
+    ESP_RETURN_ON_ERROR(esp_wifi_set_mode(WIFI_MODE_STA), TAG, "Failed to set WiFi mode");
 
     // Set Wi-Fi config
     wifi_config_t wifi_config = {};
     memcpy(wifi_config.sta.ssid, ssid, sizeof(wifi_config.sta.ssid));
     memcpy(wifi_config.sta.password, password, sizeof(wifi_config.sta.password));
-    ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
+    ESP_RETURN_ON_ERROR(esp_wifi_set_config(WIFI_IF_STA, &wifi_config), TAG, "Failed to set WiFi configuration");
+    ESP_RETURN_ON_ERROR(esp_wifi_start(), TAG, "Failed to start WiFi");
 
     // Start Wi-Fi
-    ESP_ERROR_CHECK(esp_wifi_start());
+    ESP_RETURN_ON_ERROR(esp_wifi_start(), TAG, "Failed to start WiFi");
 
     xEventGroupWaitBits(s_wifi_event_group,
         WIFI_CONNECTED_BIT | WIFI_FAIL_BIT,
         pdFALSE,
         pdFALSE,
         portMAX_DELAY);
+
+    return ESP_OK;
 }
 
 // void wifi_sta_deinit() {
@@ -126,13 +130,13 @@ void wifi_sta_deinit()
 
     ESP_ERROR_CHECK(esp_wifi_deinit());
 
-    esp_netif_destroy_default_wifi(netif);
-
-    netif = nullptr;
+    // esp_netif_destroy_default_wifi(netif);
+    //
+    // netif = nullptr;
 
     vEventGroupDelete(s_wifi_event_group);
 
-    esp_event_loop_delete_default();
+    // esp_event_loop_delete_default();
 
     ESP_LOGI(TAG, "Wi-Fi deinitialized successfully.");
 }

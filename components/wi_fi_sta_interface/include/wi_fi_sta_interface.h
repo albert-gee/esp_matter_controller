@@ -24,7 +24,7 @@ extern "C" {
  * @param ssid     The SSID of the Wi-Fi network.
  * @param password The password of the Wi-Fi network.
  */
-void wifi_sta_init(const char *ssid, const char *password);
+esp_err_t wifi_sta_init(const char *ssid, const char *password);
 
 /**
  * @brief Deinitialize and clean up Wi-Fi resources.
